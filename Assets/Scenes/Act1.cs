@@ -6,6 +6,7 @@ public class Act1 : MonoBehaviour {
 
     public GameObject cube1;
     public Light light1;
+    public GameObject txt;
 
     float distant = 5;
 
@@ -19,6 +20,8 @@ public class Act1 : MonoBehaviour {
         x0 = cube1.transform.position.x;
         y0 = cube1.transform.position.y;
         z0 = cube1.transform.position.z;
+
+        print(light1.GetType());
     }
 
     // Update is called once per frame
@@ -49,6 +52,10 @@ public class Act1 : MonoBehaviour {
         }
 
         cube1.transform.position = new Vector3(x0, y0, z0 + distant*Input.GetAxis("Vertical"));
+
+        //print(Input.gyro.gravity);
+        
+        
 
     }
 }
