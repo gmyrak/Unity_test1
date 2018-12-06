@@ -1,27 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Act1 : MonoBehaviour {
 
     public GameObject cube1;
     public Light light1;
-    public GameObject txt;
+    public Text txt;
+    
 
     float distant = 5;
 
-    float x0;
-    float y0;
-    float z0;
+    Vector3 v0;
+
+    private void OnGUI()
+    {
+        GUI.Button(new Rect(10, 10, 150, 20), "Skinned Button");
+        //GUI.
+        //GUI.Label.s
+    }
+
 
     // Use this for initialization
     void Start () {
         print("Hello!");
-        x0 = cube1.transform.position.x;
-        y0 = cube1.transform.position.y;
-        z0 = cube1.transform.position.z;
+        v0 = cube1.transform.position;
+        //print(txt.GetType());
 
-        print(light1.GetType());
+
     }
 
     // Update is called once per frame
@@ -51,11 +58,23 @@ public class Act1 : MonoBehaviour {
 
         }
 
-        cube1.transform.position = new Vector3(x0, y0, z0 + distant*Input.GetAxis("Vertical"));
+        //cube1.transform.position = new Vector3(x0, y0, z0 + distant*Input.GetAxis("Vertical"));
+
+        
+
+        //txt.text = "Hello. Canvas";
 
         //print(Input.gyro.gravity);
-        
-        
+        //txt.text = Input.gyro.gravity.ToString();
+        //txt.text = Input.gyro.
+
+        Vector3 v = Input.acceleration;
+        //Vector3 v = new Vector3(7, 8, 9);
+        txt.text = string.Format("x={0}\ny={1}\nz={2}", v.x, v.y, v.z);
+
+        cube1.transform.position = v0 + distant*v;
+
+
 
     }
 }
