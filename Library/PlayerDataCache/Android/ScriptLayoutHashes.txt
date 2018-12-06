@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/Projects/Unity/Unity_test1/Android_buld/cube1.apk
+D:/Projects/Unity/Unity_test1/Android_buld/cube2.apk
 SceneListBegin?
 Assets/Scenes/Main.unity
 SceneListEnd?
