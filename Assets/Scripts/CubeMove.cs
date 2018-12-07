@@ -13,8 +13,7 @@ public class CubeMove : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
-        //Instantiate(cube1, cube1.transform.position, cube1.transform.rotation);
-		
+        //Instantiate(this, this.transform.position, Quaternion.identity);		
 	}
 	
 	// Update is called once per frame
@@ -36,7 +35,12 @@ public class CubeMove : MonoBehaviour {
         {
             Instantiate(this, this.transform.position + 2*Vector3.up, Quaternion.identity);
         }
+        
 
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.name);
     }
 }
